@@ -8,7 +8,7 @@ COPY . $GOPATH/src/github.com/maxsuelmarinho/flutter-chat-example/chat-server
 WORKDIR $GOPATH/src/github.com/maxsuelmarinho/flutter-chat-example/chat-server
 
 RUN go get -d -v
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/chat-server
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build ./cmd/server/ -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/chat-server
 
 FROM scratch
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
