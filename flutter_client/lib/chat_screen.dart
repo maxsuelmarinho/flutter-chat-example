@@ -14,9 +14,6 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   final List<ChatMessage> _messages = <ChatMessage>[];
   bool _isComposing = false;
 
-  ChatService _service;
-  final StreamController _streamController =StreamController<List<Message>>();
-
   @override
   void dispose() {
     for (ChatMessage message in _messages)

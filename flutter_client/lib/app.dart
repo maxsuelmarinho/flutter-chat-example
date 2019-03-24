@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'chat_screen.dart';
+import 'chat_screen_grpc.dart';
 
 class FriendlychatApp extends StatelessWidget {
   @override
